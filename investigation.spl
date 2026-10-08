@@ -1,0 +1,23 @@
+index=winevtlog500 (EventID=4624 OR EventID=4625)
+| table _time, EventID, IpAddress, TargetUserName, LogonType
+| sort _time
+
+index=winevtlog500 EventID=4688
+| table _time, NewProcessName, CommandLine, ParentProcessName, SubjectUserName
+| sort _time
+
+index=winevtlog500 EventID=4104
+| table _time, AccountName, ScriptBlockText, Path
+| sort _time
+
+index=winevtlog500 EventID=4702
+| table _time, TaskName, TaskContent, UserName, Author
+| sort _time
+
+index=winevtlog500 (EventID=5140 OR EventID=5145)
+| table _time, EventID, IpAddress, ShareName, RelativeTargetName, SubjectUserName
+| sort _time
+
+index=winevtlog500 EventID=10
+| table _time, TargetImage, SourceImage, SourceUser, GrantedAccess
+| sort _time
